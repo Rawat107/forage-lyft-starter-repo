@@ -20,13 +20,14 @@ class TestSpindlerBattery(unittest.TestCase):
 
   def battery_service_is_not_due(self):
     """
-    Test that will return True
+    Test that will return False
     when the time difference is under the time margin for service
     """
     current_date = datetime.today().date()
     last_service_date = current_date.replace(year=current_date.year - 1)
     testbattery = SpindlerBattery(last_service_date, current_date)
     self.assertFalse(testbattery.needs_service())
+    
 
   def battery_service_at_threshold(self):
     """
@@ -53,7 +54,7 @@ class TestNubbinBattery(unittest.TestCase):
 
   def battery_service_is_not_due(self):
     """
-    Test that will return True
+    Test that will return False
     when the time difference is under the time margin for service
     """
     current_date = datetime.today().date()

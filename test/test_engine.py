@@ -20,8 +20,8 @@ class TestCapuletEngine(unittest.TestCase):
     Test will return False
     when the mileage difference is under 30000
     """
-    last_service_mileage = 22
-    current_mileage = 30000
+    last_service_mileage = 30001
+    current_mileage = 30100
     test_engine = CapuletEngine(current_mileage, last_service_mileage)
     self.assertFalse(test_engine.needs_service())
 
